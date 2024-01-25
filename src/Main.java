@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-
 public class Main {
 public static void main(String[] args){
 ArrayList<Person>persons=new ArrayList<>();
@@ -10,9 +8,9 @@ persons.add(new Student("Zinedine","Zidane", 3.99));
 persons.add(new Employee ("Ghetto", "Dogs", "Boss", 10000));
 persons.add(new Employee ("Yerassyl", "Zekebayev", "CEO", 99999));
 persons.add(new Student("Harry","Potter",2.65));
-    for (int i=0;i< persons.size();i++){
-        persons.get(i).getPaymentAmount();
-}
+    for (Person person : persons) {
+        person.getPaymentAmount();
+    }
     Collections.sort(persons);
     printData(persons);
 }
