@@ -34,10 +34,13 @@ public abstract class Person implements Payable, Comparable<Person> {
         return id;
     }
 
-
+    public abstract String Getposition();
     @Override
     public String toString() {
-        return this.id + ". " + this.name + " " + this.surname;
+        return Getposition()+": "+this.id + ". " + this.name + " " + this.surname;
     }
-    public abstract String Getposition();
+    @Override
+    public int compareTo(Person person) {
+        return Double.compare(this.getPaymentAmount(), person.getPaymentAmount());
+    }
 }

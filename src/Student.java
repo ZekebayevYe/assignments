@@ -3,11 +3,6 @@ public class Student extends Person{
     public Student(){
         super();
     }
-    @Override
-    public double getPaymentAmount() {
-        if (2.67<gpa){return 36600.00;}
-        else{return 0;}
-    }
     public Student(String name, String surname, double gpa){
         super(name, surname);
         setGpa(gpa);
@@ -18,26 +13,17 @@ public class Student extends Person{
     public double getGpa() {
         return gpa;
     }
-
     @Override
     public String Getposition() {
         return "Student";
     }
-
     @Override
-    public String toString() {
-        return "Student"+super.toString();
+    public double getPaymentAmount() {
+        if (2.67>gpa){return 0;}
+        else{return 36600.00;}
     }
-
     @Override
-    public int compareTo(Person person) {
-        return Double.compare(this.getPaymentAmount(), person.getPaymentAmount());
+    public String toString(){
+        return super.toString();
     }
-
-
-
-
-
-
-
 }

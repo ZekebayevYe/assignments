@@ -2,10 +2,6 @@ public class Employee extends Person{
     private int salary;
     private String position;
 
-    @Override
-    public double getPaymentAmount() {
-        return salary;
-    }
     public Employee(){
         super();
     }
@@ -14,11 +10,6 @@ public class Employee extends Person{
         super(name, surname);
         setPosition(position);
         setSalary(salary);
-    }
-
-    @Override
-    public String toString() {
-        return "Employee " + super.toString();
     }
 
     public void setSalary(int salary) {
@@ -33,16 +24,16 @@ public class Employee extends Person{
         return salary;
     }
 
-
-
-
-    @Override
-    public int compareTo(Person person) {
-        return Double.compare(this.getPaymentAmount(), person.getPaymentAmount());
-    }
-
     @Override
     public String Getposition() {
         return position;
+    }
+    @Override
+    public double getPaymentAmount() {
+        return salary;
+    }
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
